@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,13 +14,14 @@
       <img src="" alt="logo" class="nav-logo">
       <div class="user">
         <button>Explorer</button>
-        <img src="https://uifaces.co/our-content/donated/gPZwCbdS.jpg" alt="user image" >
+        <img src="https://uifaces.co/our-content/donated/gPZwCbdS.jpg" alt="user image">
       </div>
     </div>
     <div class="container">
       <div class="info">
         <h1>DISCOVER</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci natus, odit recusandae possimus fugiat vero! </p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci natus, odit recusandae possimus fugiat
+          vero! </p>
         <input type="text" placeholder="search">
       </div>
     </div>
@@ -27,11 +29,45 @@
     <div class="slider">
       <button id="prev">Prev</button>
       <div class="preview">
-       <p>Image goes here</p>
+        <img src="images/image1.jpg" alt="" class="active thumbnail">
+        <img src="images/image2.jpg" alt="" class="thumbnail">
+        <img src="images/image3.jpg" alt="" class="thumbnail">
+        <img src="images/image4.jpg" alt="" class="thumbnail">
       </div>
       <button id="next">Next</button>
     </div>
   </div>
+
+  <script>
+    let prev = document.getElementById('prev')
+    let next = document.getElementById('next')
+    let thumbnail = document.getElementsByClassName('thumbnail')
+    let hero = document.getElementById('hero')
+
+    let backgroundImage = new Array(
+      "images/image1.jpg",
+      "images/image2.jpg",
+      "images/image3.jpg",
+      "images/image4.jpg",
+    );
+    let i = 0;
+    next.onclick = () => {
+      if (i < 4) {
+        hero.style.backgroundImage = `url(${backgroundImage[i + 1]})`;
+        thumbnail[i + 1].classList.add('active');
+        thumbnail[i].classList.remove('active');
+        i++;
+      }
+    }
+    prev.onclick = () => {
+      if (i > 0) {
+        hero.style.backgroundImage = `url(${backgroundImage[i - 1]})`;
+        thumbnail[i - 1].classList.add('active');
+        thumbnail[i].classList.remove('active');
+        i--;
+      }
+    }
+  </script>
 
 </body>
 
