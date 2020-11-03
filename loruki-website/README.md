@@ -1,0 +1,5 @@
+
+This is a codealong from [this youtube tutorial](https://youtu.be/p0bGHP-PXD4)
+
+Font awesome cdn [link](https://cdnjs.com/libraries/font-awesome)
+
